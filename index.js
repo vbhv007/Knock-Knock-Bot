@@ -10,7 +10,7 @@ jokes["Etch"] = "Bless you, friend.";
 jokes["Robin"] = "Robin you, now hand over the cash.";
 jokes["Cash"] = "No thanks, I’ll have some peanuts.";
 
-
+var template = "Template for the bot\nYou: Joke Time\nBot: Knock Knock\nYou: Who's There?\nBot: X\nYou: X who?\nBot: Y";
 var said_knock_to = []
 var said_joke_start = []
 var total_jokes_told = 0;
@@ -39,10 +39,6 @@ function do_this(event){
     console.log(str.slice(0, -4));
     say_joke_finish(name, str.slice(0, -4));
   }
-  else if (str == "Knock Knock"){
-    console.log('recieved knock knock');
-    say_who(name);
-  }
 }
 
 function say_knock_knock(name){
@@ -63,7 +59,7 @@ function say_joke_start(name){
     keys.push(i);
   }
   var random_num = Math.floor((Math.random() * (keys.length - 1)) + 1);
-  var joke = jokes[keys[random_num]];
+  var joke = keys[random_num];
   T.post('statuses/update', { status: '@' + name + ' ' + joke }, function(err, data, response) {
   console.log('Said ' + joke)
   })
@@ -100,9 +96,3 @@ function include(value, arr){
     return false;
   }
 }
-
-// function say_who(name){
-//   T.post('statuses/update', { status: "@" + name + " Who's There?" }, function(err, data, response) {
-//   console.log('Said Knock Knock')
-//   })
-// }
