@@ -1,0 +1,28 @@
+{
+  "name": "Knock-Knock-Bot",
+  "version": "1.0.0",
+  "description": "This is a twitter bot which cracks Knock-Knock jokes and also learns new jokes.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vbhv007/Knock-Knock-Bot.git"
+  },
+  "keywords": [
+    "bot",
+    "twitter",
+    "Knock-Knock",
+    "jokes"
+  ],
+  "author": "lucifer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vbhv007/Knock-Knock-Bot/issues"
+  },
+  "homepage": "https://github.com/vbhv007/Knock-Knock-Bot#readme",
+  "dependencies": {
+    "twit": "^2.2.10"
+  }
+}
